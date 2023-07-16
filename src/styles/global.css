@@ -2,8 +2,26 @@
 
 * {
   font-family: "Roboto Condensed", sans-serif;
+  background-color: #010111;
+  color: white;
 }
 
 body {
   margin: 0;
+}
+
+/* To style the scrollbar track */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* To style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 5px;
+}
+
+::selection {
+  background-color: red; /* Set the background color for selected text */
+  color: black; /* Set the text color for selected text */
 }

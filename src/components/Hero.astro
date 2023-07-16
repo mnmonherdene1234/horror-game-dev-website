@@ -1,0 +1,63 @@
+<section class="min-h-screen pt-72">
+  <div class="flex flex-col gap-4">
+    <h1 class="title text-center text-5xl font-bold">
+      HORROR GAME DEV<span class="text-red-500">.</span>
+    </h1>
+    <p class="subtitle text-center">Crafting Terrifying Experiences</p>
+  </div>
+</section>
+<script>
+  const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("title-animation");
+      } else {
+        entry.target.classList.remove("title-animation");
+      }
+    });
+  });
+
+  const title = document.querySelector(".title");
+
+  if (title) {
+    titleObserver.observe(title);
+  }
+
+  const subtitleObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("subtitle-animation");
+      } else {
+        entry.target.classList.remove("subtitle-animation");
+      }
+    });
+  });
+
+  const subtitle = document.querySelector(".subtitle");
+
+  if (subtitle) {
+    subtitleObserver.observe(subtitle);
+  }
+</script>
+<style>
+  .title-animation {
+    animation-name: fade-animation;
+    animation-duration: 1s;
+  }
+
+  .subtitle-animation {
+    animation-name: fade-animation;
+    animation-duration: 1s;
+  }
+
+  @keyframes fade-animation {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+</style>
