@@ -13,24 +13,3 @@ import SectionTitle from "./SectionTitle.astro";
     />
   </div>
 </section>
-<script>
-  const gameCards = document.querySelectorAll(".game-card");
-
-  const gameCardsObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show-card-animation");
-      } else {
-        entry.target.classList.remove("show-card-animation");
-      }
-    });
-  });
-
-  gameCards.forEach((gameCard) => gameCardsObserver.observe(gameCard));
-</script>
-<style>
-  .show-card-animation {
-    background-color: green;
-    scale: 1.2;
-  }
-</style>
